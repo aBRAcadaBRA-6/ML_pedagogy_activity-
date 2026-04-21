@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
+import joblib
 
 print("Loading data...")
 
@@ -87,3 +88,7 @@ importance = importance.sort_values(ascending=False)
 
 print("\nFeature Importance:\n")
 print(importance)
+
+
+joblib.dump(model, "model.pkl")
+print("Model saved as model.pkl")
